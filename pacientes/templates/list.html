@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Diagnóstico</title>
+</head>
+<body>
+    <ul>
+        {% for pessoa in pessoa %}
+
+            <li>Nome do paciente:{{ pessoa.nome }}</li>
+            <li>Tipo sanguíneo:{{ pessoa.tipo_sang }}</li>
+            <li>CPF:{{ pessoa.cpf }}</li>
+            <li>Data de nascimento:{{ pessoa.data_nasc  }}</li>
+            <li>Gênero:{{ pessoa.gener }}</li>
+            <li>Sintomas:{{ pessoa.sintomas }}</li>
+            <li>Data de cadastro:{{ pessoa.data_cadastro  }}</li>
+            <li>Gravidade:{{ pessoa.gravidade_caso }}</li>
+            <li>Descrição dos sintomas:{{ pessoa.descricao_caso }}</li>
+
+             {% if pessoa.sintomas == 'febre,tosse seca,dificuldade para respirar' %}
+               - Covid 19 - Confirmado <br>
+               - Influenza - <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+            {% if pessoa.sintomas == 'tosse seca,febre,dificuldade para respirar' %}
+               - Covid 19 - Confirmado <br>
+               - Influenza - <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+            {% if pessoa.sintomas == 'dificuldade para respirar,tosse seca,febre' %}
+               - Covid 19 - Confirmado <br>
+               - Influenza - <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+            {% if pessoa.sintomas == 'febre,dor muscular,dor de garganta,dor de cabeça,tosse' %}
+               - Covid 19 - <br>
+               - Influenza - Confirmado <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+            {% if pessoa.sintomas == 'dor de cabeça,febre,dor muscular,dor de garganta,tosse' %}
+               - Covid 19 - <br>
+               - Influenza - Confirmado <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+             {% if pessoa.sintomas == 'tosse,dor de cabeça,febre,dor muscular,dor de garganta' %}
+               - Covid 19 - <br>
+               - Influenza - Confirmado <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+            {% if pessoa.sintomas == 'tosse,dor de cabeça,febre,dor muscular,dor de garganta,vômito,diarreia,mal estar' %}
+               - Covid 19 - <br>
+               - Influenza - <br>
+               - Influenza h1n1 - Confirmado  <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+            {% if pessoa.sintomas == 'dor de cabeça,febre,dor muscular,tosse,dor de garganta,vômito,diarreia,mal estar' %}
+               - Covid 19 - <br>
+               - Influenza - <br>
+               - Influenza h1n1 - Confirmado  <br>
+               - Influenza h5n1 - <br>
+            {% endif %}
+             {% if pessoa.sintomas == 'febre,dor muscular,diarreia,tosse,dor de garganta,dor de cabeça,vômito,mal estar' %}
+               - Covid 19 - <br>
+               - Influenza - <br>
+               - Influenza h1n1 - Confirmado  <br>
+               - Influenza h5n1 - <br>
+             {% endif %}
+             {% if pessoa.sintomas == 'dor muscular,febre,mal estar,coriza,espirros,falta de ar' %}
+               - Covid 19 - <br>
+               - Influenza - <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - Confirmado <br>
+             {% endif %}
+             {% if pessoa.sintomas == 'mal estar,dor muscular,febre,coriza,espirros,falta de ar' %}
+               - Covid 19 - <br>
+               - Influenza - <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - Confirmado <br>
+             {% endif %}
+             {% if pessoa.sintomas == 'coriza,mal estar,dor muscular,febre,espirros,falta de ar' %}
+               - Covid 19 - <br>
+               - Influenza - <br>
+               - Influenza h1n1 - <br>
+               - Influenza h5n1 - Confirmado <br>
+             {% endif %}
+
+        <br><hr>
+        {% endfor %}
+         <a href="{% url 'create' %}"><button type="button" class="btn btn-success">Registrar novo paciente</button></a>
+         <a href="{% url 'create1' %}"><button type="button" class="btn btn-primary">Registrar minha infecção juntamente do meu método de prevenção</button></a>
+    </ul>
+
+</body>
+</html>

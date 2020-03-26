@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagnóstico</title>
+</head>
+<body>
+    <ul>
+        {% for pessoa in pessoa %}
+
+            <li>nome:{{ pessoa.nome }}</li>
+            <li>Tipo sanguíneo:{{ pessoa.tipo_sang }}</li>
+            <li>CPF:{{ pessoa.cpf }}</li>
+            <li>Data de nascimento:{{ pessoa.data_nasc  }}</li>
+            <li>Gênero:{{ pessoa.gener }}</li>
+            <li>Sintomas:{{ pessoa.sintomas }}</li>
+            <li>Data de cadastro:{{ pessoa.data_cadastro  }}</li>
+            <li>Gravidade:{{ pessoa.gravidade_caso }}</li>
+            <li>Descrição dos sintomas:{{ pessoa.descricao_caso }}</li>
+        <br><hr>
+            {% if pessoa.sintomas == 'febre,dor' %}
+                PEGOU
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
